@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Avaliação</title>
+    <title>Avaliação G1</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -31,7 +31,6 @@
 </head>
 
 <body>
-
 <div style="margin: 100px 0;">
     <div class="container">
         <div class="row">
@@ -76,7 +75,7 @@
                 content = [val.oid, val.enunciado, val.pontuacao, val.grau, val.id_atividade]
                 // Adiciona o elemento ao localStorage
                 localStorage.setItem(key,JSON.stringify(content))
-                // Insere linhas no elemento com ID = #questoes
+                // Insere linhas no elemento com id = #questoes
                 $('#questoes').append('<tr><td><i class="btn fa fa-arrow-up fa-fw" aria-hidden="true" id="up' + key + '" onclick="up(this)" ></i><i class="btn fa fa-arrow-down fa-fw" aria-hidden="true" id="down' + key + '" onclick="down(this)" ></i></td><td>'+ val.enunciado + '</td><td>'+ val.pontuacao + '</td><td>'+ val.grau + '</td></tr>');
             });
         });
@@ -89,6 +88,7 @@
                 aux = localStorage.getItem(key)
                 localStorage.setItem(key, localStorage.getItem(key-1))
                 localStorage.setItem(key-1, aux)
+                // Atualiza tabela
                 update();
             };
         });
@@ -101,6 +101,7 @@
                 aux = localStorage.getItem(key)
                 localStorage.setItem(key, localStorage.getItem(key+1))
                 localStorage.setItem(key+1, aux)
+                // Atualiza tabela
                 update();
             };
         });        
